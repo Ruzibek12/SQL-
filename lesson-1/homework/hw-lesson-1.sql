@@ -74,4 +74,15 @@ insert into students values (1,'Alex', 18), (2,'Jason',23), (3,'Bob',21)
 --Main commands: commit, rollback, savepoint, begin transaction;
 
 
+insert into students values (4,'Joe',24), (5,'Ross',27),(6,'Katie',22)
+select * from students 
+
+--To restore adventureWorksDW2022, we have to download this file and save it to the specific folder. 
+--Then, we need to open SSMS and find object explorer place, by right-clicking database, we should select restore databse. 
+--After that, in the source section, we have to select device and then click on ... button. 
+--Once these steps completed, we have to press add and download .bak file. 
+
+
+
+
 
