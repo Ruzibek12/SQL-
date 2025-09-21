@@ -122,3 +122,50 @@ constraint CHK_Customer_age check (age >=18)
 ); 
 
 create table Visitors (VisitorID int primary key identity (100,10)); 
+
+
+create table Cities (CitiyID int primary key identity (100,10)); 
+
+CREATE TABLE OrderDetails (
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (OrderID, ProductID)
+);
+
+--ISNULL and COALESCE are used to return values if something is missed in the previous rows. 
+--For example, if I want to find personal information of my customers, such as names, phone numbers, 
+--or emails, I can use these functions. These functions can help me return values if any of my value rows 
+--are empty. Instead of showing empty, if I use one of these two functions, I can choose how "NULL"
+--can appear in my table. The difference between ISNULL and COALESCE is that the first one only deals 
+--with two arguments while the second one can do so with more then 2 arguments. 
+
+create table Employees_duplicate (
+EmployeeID int Primary Key,
+FirstName varchar (50) NOT NULL, 
+LastName varchar (50) NoT NULL, 
+Email varchar (50) UNIQUE, 
+HireDate Date NOT NULL, 
+Salary Decimal (10,2)
+); 
+
+create table Customers_4 (
+CustomerID int primary key, 
+FirstName varchar (50), 
+LastName varchar (50), 
+); 
+
+create table Orders (
+OrderId int primary key, 
+CustomerID int, 
+OrderDate date, 
+foreign key (CustomerID) references Customers_4 (CustomerID)
+on delete cascade 
+on update cascade
+); 
+
+
+select * from Customers_4
+select * from Orders
+
